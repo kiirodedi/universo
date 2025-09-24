@@ -8,6 +8,7 @@ import iconBuracoNegro from '../assets/img/iconBuracoNegro.png';
 import iconInicio from '../assets/img/iconInicio.png';
 
 import imgMercurio from '../assets/img/imgMercurio.jpg';
+import imgVenus from '../assets/img/imgVenus.jpg'
 
 export default function Planetas(props) {
   return (
@@ -21,13 +22,24 @@ export default function Planetas(props) {
         source={ordemPlanetas}
         style={estilo.img}
       />
-      <Text style={estilo.subTitulo}>Mercúrio</Text>
+      <Text style={estilo.planetaNome}>Mercúrio</Text>
       <Image source={imgMercurio} style={estilo.imgPlaneta} />
       <Text style={estilo.conteudo}>É o menor planeta do Sistema Solar, o mais rápido e mais próximo ao Sol. 
         Em função dessa proximidade, apresenta médias de temperatura de 125 °C, podendo chegar a 425 °C. 
         Completa uma volta ao redor do Sol em 87,969 dias, mantendo sempre a mesma face voltada para ele, 
         formada por um deserto de rochas incandescentes. Sua face oculta é escura e gelada, com baixas 
-        temperaturas. A atmosfera é bastante rarefeita.</Text>
+        temperaturas. A atmosfera é bastante rarefeita.
+      </Text>
+
+      <Text style={estilo.planetaNome}>Vênus</Text>
+      <Image source={imgVenus} style={estilo.imgPlaneta} />
+      <Text style={estilo.conteudo}>Conhecido como “Estrela d’alva”, por causa de seu forte brilho, Vênus
+        tal qual Mercúrio é um planeta que não possui satélite. Visível do nosso planeta, Vênus é o segundo
+        planeta a partir do Sol e o mais perto do planeta Terra. Curioso notar que mesmo sendo o segundo planeta
+        a partir do Sol (depois de Mercúrio), Vênus é o planeta mais quente do sistema solar, com temperaturas
+        que podem atingir 480°C. Assemelha-se com o planeta Terra no tocante ao tamanho, composição, estrutura,
+        massa, densidade e força gravitacional.
+      </Text>
       
       <Pressable
         onPress={ () => { props.navigation.navigate("Planetas") } }
@@ -94,9 +106,10 @@ container: {
     marginBottom: 10,
     textAlign: 'center',
   },
-  subTitulo: {
+  planetaNome: {
    color: '#ffbb62b2',
    fontSize: 20,
+   marginTop: 10,
   },
 
   textBtn: {
@@ -112,5 +125,7 @@ container: {
     height: 200,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 20,
+    marginTop: 10,
   },
 });

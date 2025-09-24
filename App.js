@@ -17,6 +17,7 @@ export default function App() {
         screenOptions={{
           headerStyle: { backgroundColor: '#b88849ff' },
           headerTintColor: '#000',
+          contentStyle: { flex: 1 } 
         }}>
         <Stack.Screen name="Início" component = { TelaInicial } />
         <Stack.Screen name="Planetas" component = { Planetas } />

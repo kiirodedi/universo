@@ -12,7 +12,7 @@ import imgMercurio from '../assets/img/imgMercurio.jpg';
 export default function Planetas(props) {
   return (
     <View style={estilo.container}>
-      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 30 }}>
+      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 30 }} style={{ flex: 1, width: '100%' }}>
       <Text style={estilo.titulo}>Planetas</Text>
       <Text style={estilo.conteudo}>Os Planetas são corpos celestes sem luz e calor próprios, esféricos e com
         gravidade própria, os quais giram em torno de uma estrela, que no caso do planeta Terra é o Sol.
@@ -66,7 +66,6 @@ const estilo = StyleSheet.create({
 container: {
     flex: 1,
     backgroundColor: '#000',
-    alignItems: 'center',
   },
 
   btn: {

@@ -1,11 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+
+import Navegacao from '../components/Navegacao.js';
 
 import ordemPlanetas from '../assets/img/planetas/ordemPlanetas.jpg';
-import iconPlaneta from '../assets/img//icons/iconPlaneta.png';
-import iconGalaxia from '../assets/img/icons/iconGalaxia.png';
-import iconBuracoNegro from '../assets/img/icons/iconBuracoNegro.png';
-import iconInicio from '../assets/img/icons/iconInicio.png';
 
 import imgMercurio from '../assets/img/planetas/imgMercurio.jpg';
 import imgVenus from '../assets/img/planetas/imgVenus.jpg';
@@ -114,33 +112,8 @@ export default function Planetas(props) {
       </Text>
 
       </ScrollView>
-      <Pressable
-        onPress={ () => { props.navigation.navigate("Planetas") } }
-        style={estilo.btn}>
-        <Image source={iconPlaneta} style={{ width: 20, height: 20, marginRight: 6 }} />
-        <Text style={estilo.textBtn}>Planetas</Text>
-      </Pressable>
 
-      <Pressable
-        onPress={ () => { props.navigation.navigate("Galaxia") } }
-        style={estilo.btn}>
-        <Image source={iconGalaxia} style={{ width: 20, height: 20, marginRight: 6 }} />
-        <Text style={estilo.textBtn}>Galáxias</Text>
-      </Pressable>
-
-      <Pressable
-        onPress={ () => { props.navigation.navigate("BuracoNegro") } }
-        style={estilo.btn}>
-        <Image source={iconBuracoNegro} style={{ width: 20, height: 20, marginRight: 6 }} />  
-        <Text style={estilo.textBtn}>Buraco Negro</Text>
-      </Pressable>
-
-      <Pressable
-        onPress={ () => { props.navigation.navigate("Início") } }
-        style={estilo.btn}>
-          <Image source={iconInicio} style={{ width: 20, height: 20, marginRight: 6 }} />
-        <Text style={estilo.textBtn}>Início</Text>
-      </Pressable>
+    <Navegacao navigation={props.navigation} />
       <StatusBar style="auto" />
     </View>
   );
@@ -150,18 +123,6 @@ const estilo = StyleSheet.create({
 container: {
     flex: 1,
     backgroundColor: '#000',
-  },
-
-  btn: {
-    backgroundColor: '#ffbb62b2',
-    paddingVertical: 10,
-    paddingHorizontal: 14,
-    borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    margin: 10,
-    minWidth: 200,
   },
 
   img: { 
@@ -178,20 +139,19 @@ container: {
     marginBottom: 10,
     textAlign: 'center',
   },
+
   planetaNome: {
    color: '#ffbb62b2',
    fontSize: 20,
    marginTop: 10,
   },
 
-  textBtn: {
-    fontWeight: 'bold',
-  },
   conteudo: {
     fontSize: 13,
     color: '#fff',
     maxWidth: 320,
 },
+
   imgPlaneta: { 
     width: 200,
     height: 200,
